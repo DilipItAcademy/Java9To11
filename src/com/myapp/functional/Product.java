@@ -1,5 +1,8 @@
 package com.myapp.functional;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Product {
 	
 	private int id;
@@ -59,6 +62,42 @@ public class Product {
 	public void setVendors(String[] vendors) {
 		this.vendors = vendors;
 	}
+
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Product [id=");
+		builder.append(id);
+		builder.append(", name=");
+		builder.append(name);
+		builder.append(", price=");
+		builder.append(price);
+		builder.append(", vendors=");
+		builder.append(Arrays.toString(vendors));
+		builder.append("]");
+		return builder.toString();
+	}
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!(obj instanceof Product))
+			return false;
+		Product other = (Product) obj;
+		return id == other.id;
+	}
+
+
+	
 	
 	
 
