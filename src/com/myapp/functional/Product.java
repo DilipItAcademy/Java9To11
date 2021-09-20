@@ -100,11 +100,11 @@ public class Product {
 
 	public static Stream<Product> getProducts(){
 		return Stream.of(new Product(1, "Iphone13", 124565.5, 
-				Set.of("amazon","flipkart")),
+				Set.of("flipkart","amazon")),
 				new Product(4, "SamsungZFlip", 149565.5, 
 						Set.of("amazon","flipkart")),
 				new Product(2, "Oneplus", 39999.0, 
-						Set.of("amazon","tatacliq")),
+						Set.of("tatacliq","offshore")),
 				new Product(5, "OneplusNord", 79999.0, 
 						Set.of("ebay","target")));
 	
