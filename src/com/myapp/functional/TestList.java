@@ -3,6 +3,7 @@ package com.myapp.functional;
 import java.util.ArrayList;
 import java.util.DoubleSummaryStatistics;
 import java.util.List;
+import java.util.Set;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -30,13 +31,13 @@ public class TestList {
 		
 		
 	List<Product> list=	List.of(new Product(1, "Iphone13", 124565.5, 
-				new String[] {"amazon","flipkart"}),
-				new Product(4, "SamsungZFlip", 149565.5, 
-						new String[] {"amazon","flipkart"}),
-				new Product(2, "Oneplus", 39999.0, 
-						new String[] {"amazon","flipkart"}),
-				new Product(2, "OneplusNord", 39999.0, 
-						new String[] {"amazon","flipkart"}));
+			Set.of("amazon","flipkart")),
+			new Product(4, "SamsungZFlip", 149565.5, 
+					Set.of("amazon","flipkart")),
+			new Product(2, "Oneplus", 39999.0, 
+					Set.of("amazon","flipkart")),
+			new Product(4, "OneplusNord", 79999.0, 
+					Set.of("amazon","flipkart")));
 	
 	
 	

@@ -2,13 +2,15 @@ package com.myapp.functional;
 
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.Set;
+import java.util.stream.Stream;
 
 public class Product {
 	
 	private int id;
 	private String name;
 	private Double price;
-	private String[] vendors;
+	private Set<String> vendors;
 	
 	
 	public Product() {
@@ -16,7 +18,17 @@ public class Product {
 	}
 
 
-	public Product(int id, String name, Double price, String[] vendors) {
+	public Product(int id, String name, Double price ) {
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		
+	}
+	
+	
+
+
+	public Product(int id, String name, Double price, Set<String> vendors) {
 		this.id = id;
 		this.name = name;
 		this.price = price;
@@ -54,30 +66,19 @@ public class Product {
 	}
 
 
-	public String[] getVendors() {
+	
+
+	public Set<String> getVendors() {
 		return vendors;
 	}
 
 
-	public void setVendors(String[] vendors) {
+	public void setVendors(Set<String> vendors) {
 		this.vendors = vendors;
 	}
 
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Product [id=");
-		builder.append(id);
-		builder.append(", name=");
-		builder.append(name);
-		builder.append(", price=");
-		builder.append(price);
-		builder.append(", vendors=");
-		builder.append(Arrays.toString(vendors));
-		builder.append("]");
-		return builder.toString();
-	}
+	
 
 
 	@Override
@@ -97,7 +98,37 @@ public class Product {
 	}
 
 
+	public static Stream<Product> getProducts(){
+		return Stream.of(new Product(1, "Iphone13", 124565.5, 
+				Set.of("amazon","flipkart")),
+				new Product(4, "SamsungZFlip", 149565.5, 
+						Set.of("amazon","flipkart")),
+				new Product(2, "Oneplus", 39999.0, 
+						Set.of("amazon","tatacliq")),
+				new Product(4, "OneplusNord", 79999.0, 
+						Set.of("ebay","target")));
 	
+	}
+	
+	public static Product getProduct() {
+		return getProducts().findFirst().get();
+	}
+
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Product [id=");
+		builder.append(id);
+		builder.append(", name=");
+		builder.append(name);
+		builder.append(", price=");
+		builder.append(price);
+		builder.append(", vendors=");
+		builder.append(vendors);
+		builder.append("]");
+		return builder.toString();
+	}
 	
 	
 
