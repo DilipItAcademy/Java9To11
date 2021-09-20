@@ -17,13 +17,13 @@ interface MultipleParameter{
 	void print(int x,String ...strings );
 }
 
-class Product{
+class NewProduct{
 	
 	int productId;
 	
 	
 
-	public Product(int productId) {
+	public NewProduct(int productId) {
 		this.productId = productId;
 	}
 
@@ -75,13 +75,13 @@ public class TestlamdaExpressions {
 		
 		list.forEach(s -> System.out.println(s));
 		
-		List<Product> list1 = new ArrayList<>();
+		List<NewProduct> list1 = new ArrayList<>();
 		
-		list1.add(new Product(3));
-		list1.add(new Product(4));
-		list1.add(new Product(6));
+		list1.add(new NewProduct(3));
+		list1.add(new NewProduct(4));
+		list1.add(new NewProduct(6));
 		
-		list1.forEach(Product::getProductId);
+		list1.forEach(NewProduct::getProductId);
 		
 		
 		
