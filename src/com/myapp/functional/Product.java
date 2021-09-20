@@ -105,7 +105,7 @@ public class Product {
 						Set.of("amazon","flipkart")),
 				new Product(2, "Oneplus", 39999.0, 
 						Set.of("amazon","tatacliq")),
-				new Product(4, "OneplusNord", 79999.0, 
+				new Product(5, "OneplusNord", 79999.0, 
 						Set.of("ebay","target")));
 	
 	}
