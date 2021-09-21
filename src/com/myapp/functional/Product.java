@@ -1,11 +1,10 @@
 package com.myapp.functional;
 
-import java.util.Arrays;
 import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Stream;
 
-public class Product {
+public class Product implements PrivateProductInterface{
 	
 	private int id;
 	private String name;
@@ -130,6 +129,13 @@ public class Product {
 		return builder.toString();
 	}
 	
+//	@Override
+//	public double getTaxedPriceInternal() {
+//		return getPrice()*0.34;
+//	}
 	
 
+	public  double getTax() {
+		return 1.21;
+	}
 }
